@@ -1,4 +1,4 @@
-A simple crawler for downloading [gakumas gamekee](https://www.gamekee.com/gakumas/)'s supports cards images.
+A simple crawler for downloading [gakumas gamekee](https://www.gamekee.com/gakumas/)'s cards images.
 ### Usage
 ```
 git clone https://github.com/sdutwsl/gakuen_idol_gamekee_card_crawler.git
