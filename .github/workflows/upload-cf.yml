@@ -20,3 +20,12 @@ jobs:
 
       - name: Run main.py
         run: python main.py
+
+      - name: Run upload.py
+        run: python upload.py
+        env:
+          R2_ACCESS_KEY: ${{ secrets.R2_ACCESS_KEY }}
+          R2_SECRET_KEY: ${{ secrets.R2_SECRET_KEY }}
+          R2_ENDPOINT_URL: ${{ secrets.R2_ENDPOINT_URL }}
+          BUCKET_NAME: ${{ secrets.BUCKET_NAME }}
+          PREFIX: ${{ secrets.PREFIX }}
