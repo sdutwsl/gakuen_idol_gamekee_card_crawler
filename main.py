@@ -1,5 +1,6 @@
-import requests
 import os
+
+import requests
 from bs4 import BeautifulSoup
 
 base_url = "https://www.gamekee.com"
@@ -40,7 +41,7 @@ def get_cover_path(entry_url):
     r = requests.get(entry_url)
     soup = BeautifulSoup(r.text,"html.parser")
     editor_node = soup.find(name="img",attrs={"class":"preview-image"},src=True)
-    src = editor_node["src"]
+    src = editor_node["src"] # type: ignore
     return draw_src(src)
 
 # 主函数
