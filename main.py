@@ -31,8 +31,8 @@ def draw_src(src):
 ############################# S卡部分 ##########################
 # S卡链接
 def get_s_entries(soup):
-    group_nodes = soup.find_all(name="div",attrs={"class":"item-wrapper icon-size-3 pc-item-group gakumas-item-group"})
-    s_entries = group_nodes[-1].find_all("a", href=True,title=True)
+    group_nodes = soup.find_all(name="div",attrs={"class":"item-wrapper icon-size-3 item-group gakumas-item-group"})
+    s_entries = group_nodes[-3].find_all("a", href=True,title=True)
     return list(map(lambda a:{"title":a["title"], "url":base_url+a["href"]},s_entries))
 
 # 获取cover的uri
@@ -59,7 +59,7 @@ def download_s_covers(soup):
 ############################# P卡部分 ##########################
 # P卡链接
 def get_p_entries(soup):
-    group_nodes = soup.find_all(name="div",attrs={"class":"item-wrapper icon-size-7 pc-item-group gakumas-item-group"})
+    group_nodes = soup.find_all(name="div",attrs={"class":"item-wrapper icon-size-7 item-group gakumas-item-group"})
     s_entries = group_nodes[2].find_all("a", href=True,title=True)
     return list(map(lambda a:{"title":a["title"], "url":base_url+a["href"]},s_entries))
 
